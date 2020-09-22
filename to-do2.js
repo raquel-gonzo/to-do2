@@ -60,13 +60,63 @@ function rotate(arr, shiftBy) {
     
     return arr;
 }
-console.log("this should be [3, 1, 2]");
-console.log(rotate([1,2,3], 1));
-console.log("this should be [2, 3, 1]");
-console.log(rotate([1,2,3], 2));
+// console.log("this should be [3, 1, 2]");
+// console.log(rotate([1,2,3], 1));
+// console.log("this should be [2, 3, 1]");
+// console.log(rotate([1,2,3], 2));
 
-console.log("this should be [2, 3, 1]");
-console.log(rotate([1,2,3], -1));
-console.log("this should be [3, 1, 2]");
-console.log(rotate([1,2,3], -2));
+// console.log("this should be [2, 3, 1]");
+// console.log(rotate([1,2,3], -1));
+// console.log("this should be [3, 1, 2]");
+// console.log(rotate([1,2,3], -2));
 
+// ******************************************************************
+
+// Filter Range
+// Alan is good at breaking secret codes. One method is to eliminate values 
+// that lie within a specific known range. Given arr and values min and max, 
+// retain only the array values between min and max. Work in-place: return 
+// the array you are given, with values in original order. No built-in 
+// array functions.
+
+
+function filterRange(arr, min, max) {
+    for (i = 0; i < arr.length; i++) {
+        if (arr[i] < min || arr[i] > max) {
+            for(let j = i; j < arr.length - 1; j++) {
+                arr[j] = arr[j + 1];
+            }
+            arr.length--;
+        }
+    }
+    return arr;
+}
+
+function filterRangeNewArray(arr, min, max) {
+    let newArr = [];
+
+    for (i=0; i < arr.length; i++){
+        if (arr[i] >= min && arr[i] <= max) {
+            newArr.push(arr[i]);
+        }
+    }
+
+    return newArr;
+}
+
+function filterWithArrayMethod(arr, min, max) {
+    return arr.filter((value) => value >= min && value <= max);
+}
+
+console.log(filterRange([1,4,2,3,5], 2, 4));
+console.log(filterRangeNewArray([1,4,2,3,5], 2, 4));
+console.log(filterWithArrayMethod([1,4,2,3,5], 2, 4));
+
+// ******************************************************************
+
+// Concat
+// Replicate JavaScript’s concat(). Create a standalone function that 
+// accepts two arrays. Return a new array containing the first array’s 
+// elements, followed by the second array’s elements. Do not alter the 
+// original arrays. Ex.: arrConcat( ['a','b'], [1,2] ) should return new 
+// array ['a','b',1,2].
