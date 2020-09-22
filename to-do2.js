@@ -123,7 +123,12 @@ console.log(filterWithArrayMethod([1,4,2,3,5], 2, 4));
 
 function kittyCat (arr1, arr2) {
     let newArr = [];
-    newArr.push(arr1+","+arr2);
+    for (let i=0; i < arr1.length; i++){
+        newArr.push(arr1[i])
+    }
+    for (let i=0; i < arr2.length; i++){
+        newArr.push(arr2[i])
+    }
     return newArr;
 }
 
