@@ -120,3 +120,11 @@ console.log(filterWithArrayMethod([1,4,2,3,5], 2, 4));
 // elements, followed by the second array’s elements. Do not alter the 
 // original arrays. Ex.: arrConcat( ['a','b'], [1,2] ) should return new 
 // array ['a','b',1,2].
+
+function kittyCat (arr1, arr2) {
+    let newArr = [];
+    newArr.push(arr1+","+arr2);
+    return newArr;
+}
+
+console.log(kittyCat(['a','b'], [1,2]))
